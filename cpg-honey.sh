@@ -1,3 +1,4 @@
 #!/bin/bash
 cd /opt/cpg-honey
-bundle exec rackup config.ru
+
+bundle exec puma -C config/puma.rb
