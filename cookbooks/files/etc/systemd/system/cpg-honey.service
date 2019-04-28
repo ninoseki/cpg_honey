@@ -1,0 +1,15 @@
+[Unit]
+Description=CPG-honey daemon
+Documentation=https://github.com/ninoseki/cpg-honey
+
+[Service]
+ExecStart = /opt/cpg-honey/cpg-honey.sh
+ExecRestart = /bin/kill -WINCH ${MAINPID}
+ExecStop = /bin/kill -WINCH ${MAINPID}
+Restart = no
+Type = simple
+User = cpg-honey
+Group = cpg-honey
+
+[Install]
+WantedBy = multi-user.target

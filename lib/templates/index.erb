@@ -1,0 +1,92 @@
+<html>
+    <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="tstyle.css">
+    <script language=javascript src="Inscr.js"></script>
+
+    <script language="javascript">
+    javascript:window.history.forward(1);
+    </script>
+
+    <script language="JavaScript">
+
+    var v1,v2;
+
+    function CheckAll()
+    {
+        var FLAG=0;
+        if(document.SubmitAuthInfo.PASSWORD.value == "")
+        {
+            alert("비밀번호를 확인해 주세요.");
+            document.SubmitAuthInfo.PASSWORD.focus();
+            return false;
+        }
+        return true;
+    }
+    function Initial() {
+        document.SubmitAuthInfo.PASSWORD.focus();
+    }
+
+    </script>
+    </head>
+    <body onload=Initial()>
+    <form name=SubmitAuthInfo method=post>
+
+    <table border=0 bgcolor=#ffffff>
+        <tr>
+            <td bgcolor=#ffffff align=center width=16%><img alt="MERCURY Co" border=0 src="logo2.gif"></td>
+            <td></td>
+        </tr>
+    </table><br>
+
+
+    <table border="0" bordercolor="black" cellSpacing=1 cellPadding=0 width=300 height=100 align=left valign=middle bgcolor=#ffffff>
+        <tr>
+            <td colspan="4" align=left><font color=blue size="3"><b><i>Welcome to CPG-4020</i></b></font></td>
+        </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+        <tr>
+            <td align=right><font color=green><b>Password : &nbsp;</font></b></td>
+            <td align=left><input size=20 maxLength=20 type="password" name="PASSWORD" onFocus="this.select()" ></td>
+            <td><input type=submit value=Login name=ACTION onclick="return CheckAll()"></td>
+        </tr>
+
+        <tr>
+            <td colspan="4">&nbsp;<hr></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;외부IP 주소 </td>
+            <td colspan="3"><input name=IpAddr readonly onFocus="this.select()" value=<%= host %></td>
+        </tr>
+    <!--
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;하드웨어 주소 </td>
+            <td colspan="3"><input name=MacAddr readonly onFocus="this.select()" value=00:27:1C:56:78:B5></td>
+        </tr>
+    -->
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;DNS 서버 </td>
+            <td colspan="3"><input name=DnsSvr1 readonly onFocus="this.select()" value=<%= host %>></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;연결 모드 </td>
+            <td colspan="3"><input name=IpAddr readonly onFocus="this.select()" value="유동 IP 사용"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;연결 상태 </td>
+            <td colspan="3"><input name=LinkSts readonly onFocus="this.select()" value="연결됨"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;소프트웨어 버젼 </td>
+            <td colspan="3"><input type=text colspan=3 name=SwVersion readonly onFocus="this.select()" value="1.01.28"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+    </table>
+    </form>
+    </body>
+    </html>
+
