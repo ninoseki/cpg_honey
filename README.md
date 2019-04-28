@@ -13,8 +13,8 @@ MERCURY CPG honeypot built on Ruby.
 ```bash
 $ git clone https://github.com/ninoseki/cpg_honey.git
 $ cd cpg_honey
-$ itamae ssh -h HOST -u USER cookbooks/cpg_honey/default.rb
-$ itamae ssh -h HOST -u USER cookbooks/cpg_honey/ufw.rb
+$ itamae ssh -h HOST -u USER cookbooks/default.rb
+$ itamae ssh -h HOST -u USER cookbooks/ufw.rb
 ```
 
 Then the honeypot works as `cpg-honey.service` on `80/tcp` and `9292/tcp`.

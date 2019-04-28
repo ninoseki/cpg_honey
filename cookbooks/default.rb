@@ -27,9 +27,9 @@ user "cpg-honey" do
   create_home true
 end
 
-# git "/opt/cpg-honey" do
-#   repository "https://github.com/ninoseki/cpg_honey.git"
-# end
+git "/opt/cpg-honey" do
+  repository "https://github.com/ninoseki/cpg_honey.git"
+end
 
 execute "bundle install --path vendor/bundle" do
   cwd "/opt/cpg-honey"
