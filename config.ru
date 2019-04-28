@@ -25,4 +25,6 @@ use Rack::Spy do |config|
   config.logger = logger
 end
 
+use Rack::Static, urls: ["/inscr.js", "/logo2.gif", "/tstyle.css"], root: "public"
+
 run CPG::Application.new

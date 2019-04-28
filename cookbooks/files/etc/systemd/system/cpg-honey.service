@@ -9,7 +9,7 @@ ExecStop = /bin/kill -WINCH ${MAINPID}
 Restart = no
 Type = simple
 User = cpg-honey
-Group = cgp-honey
+Group = cpg-honey
 
 [Install]
 WantedBy = multi-user.target

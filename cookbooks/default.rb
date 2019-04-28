@@ -11,31 +11,32 @@ execute "sudo apt-get update" do
   not_if "dpkg -l ruby2.6"
 end
 
-"ruby2.6 ruby2.6-dev ruby-bundler ruby-switch".split.each { |name| package name }
+"ruby2.6 ruby2.6-dev ruby-switch".split.each { |name| package name }
 
 execute "sudo ruby-switch --set ruby 2.6" do
   not_if "ruby -v | grep 2.6"
 end
 
-gem_package "bundler"
+execute "gem install bundler" do
+  not_if "gem list | grep bundler"
+end
 
-# install sleep_warm
 user "cpg-honey" do
   home "/home/cpg-honey"
   shell "/bin/bash"
   create_home true
 end
 
-git "/opt/cpg_honey" do
-  repository "https://github.com/ninoseki/cpg_honey.git"
-end
+# git "/opt/cpg-honey" do
+#   repository "https://github.com/ninoseki/cpg_honey.git"
+# end
 
 execute "bundle install --path vendor/bundle" do
-  cwd "/opt/cpg_honey"
+  cwd "/opt/cpg-honey"
   not_if "bundle | grep installed"
 end
 
-directory "/var/log/cpg_honey" do
+directory "/var/log/cpg-honey" do
   owner "cpg-honey"
   group "cpg-honey"
 end
