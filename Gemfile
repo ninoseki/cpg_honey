@@ -4,7 +4,7 @@ ruby "~> 2.6.0"
 
 gem "dotenv", "~> 2.5"
 gem "logstash-logger", "~> 0.26"
-gem "puma", "~> 5.0"
+gem "puma", "~> 5.6"
 gem "rack", "~> 2.1"
 
 group :development, :test do
