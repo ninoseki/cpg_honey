@@ -11,7 +11,7 @@ group :development, :test do
   gem 'coveralls', "~> 0.8", require: false
   gem "itamae", "~> 1.9"
   gem "pry", "~> 0.11"
-  gem "rack-test", "~> 1.1"
+  gem "rack-test", "~> 2.0"
   gem "rake", "~> 13.0"
   gem "rspec", "~> 3.8"
   gem "shotgun", "~> 0.9"
